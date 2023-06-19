@@ -30,41 +30,15 @@
                 "description": "Detach from its parent",
                 "return": "void"
             },
-            "GetSequence": {
-                "args": [],
-                "description": "Returns the active sequence\n",
-                "return": "int"
-            },
             "IsAttachedToParent": {
                 "args": [],
                 "description": "Is attached to parent",
                 "return": "bool"
             },
-            "LookupSequence": {
-                "args": [
-                    "cstring"
-                ],
-                "description": "Returns a sequence id given a name\n",
-                "return": "int"
-            },
-            "SequenceDuration": {
-                "args": [
-                    "cstring"
-                ],
-                "description": "Returns the duration in seconds of the specified sequence",
-                "return": "float"
-            },
             "SetAngularVelocity": {
                 "args": [
                     "vector"
                 ],
-                "return": "void"
-            },
-            "SetAnimation": {
-                "args": [
-                    "cstring"
-                ],
-                "description": "Pass string for the animation to play on this model",
                 "return": "void"
             },
             "SetMaterialGroup": {
@@ -1855,6 +1829,16 @@
                 "description": "Return the channel time of this ability.",
                 "return": "float"
             },
+            "GetChannelledHealthCostPerSecond": {
+                "arg_names": [
+                    "iLevel"
+                ],
+                "args": [
+                    "int"
+                ],
+                "description": "Return health cost per second of channeling at the given level (-1 is current).",
+                "return": "int"
+            },
             "GetChannelledManaCostPerSecond": {
                 "arg_names": [
                     "iLevel"
@@ -1930,6 +1914,16 @@
                     "int"
                 ],
                 "description": "Return gold cost at the given level (-1 is current).",
+                "return": "int"
+            },
+            "GetHealthCost": {
+                "arg_names": [
+                    "iLevel"
+                ],
+                "args": [
+                    "int"
+                ],
+                "description": "Return health cost at the given level (-1 is current).",
                 "return": "int"
             },
             "GetManaCost": {
@@ -2070,11 +2064,6 @@
                 "args": [],
                 "description": "Returns the level of this unit.",
                 "return": "int"
-            },
-            "GetMagicalArmorValue": {
-                "args": [],
-                "description": "Returns current magical armor value.",
-                "return": "float"
             },
             "GetMana": {
                 "args": [],
@@ -2427,6 +2416,15 @@
                 "args": [],
                 "return": "bool"
             },
+            "IsUntargetableFrom": {
+                "arg_names": [
+                    "pTargettingSource"
+                ],
+                "args": [
+                    "handle"
+                ],
+                "return": "bool"
+            },
             "NoHealthBar": {
                 "args": [],
                 "return": "bool"
@@ -2462,6 +2460,18 @@
             "Script_GetAttackRange": {
                 "args": [],
                 "description": "Gets this unit's attack range after all modifiers.",
+                "return": "float"
+            },
+            "Script_GetMagicalArmorValue": {
+                "arg_names": [
+                    "bUseExperimentalFormula",
+                    "inflictor"
+                ],
+                "args": [
+                    "bool",
+                    "handle"
+                ],
+                "description": "Returns current magical armor value.",
                 "return": "float"
             },
             "Script_IsDeniable": {
@@ -2650,6 +2660,16 @@
                 "description": "Return the channel time of this ability.",
                 "return": "float"
             },
+            "GetChannelledHealthCostPerSecond": {
+                "arg_names": [
+                    "iLevel"
+                ],
+                "args": [
+                    "int"
+                ],
+                "description": "Return health cost per second of channeling at the given level (-1 is current).",
+                "return": "int"
+            },
             "GetChannelledManaCostPerSecond": {
                 "arg_names": [
                     "iLevel"
@@ -2725,6 +2745,16 @@
                     "int"
                 ],
                 "description": "Return gold cost at the given level (-1 is current).",
+                "return": "int"
+            },
+            "GetHealthCost": {
+                "arg_names": [
+                    "iLevel"
+                ],
+                "args": [
+                    "int"
+                ],
+                "description": "Return health cost at the given level (-1 is current).",
                 "return": "int"
             },
             "GetManaCost": {
